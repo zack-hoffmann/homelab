@@ -1,0 +1,17 @@
+{
+  "ignition": {
+    "version": "3.4.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "name": "zack",
+        "passwordHash": "$6$s7pDMsY1z.tgqccB$xoRwcq/.7AT52wDROmc2vtLZV9I1XEo7kCH7R11hckFGE1mMgkI8FAljoU.lIqyslu4FHp2uVfk08NKjiR01.1",
+        "groups": ["wheel"],
+        "sshAuthorizedKeys": [
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKUSDL4EcRZtW/b3KWu0MkmeudAbK7GHzApEk67A2ub/ zachary.hoffmann@gmail.com"
+        ]
+      }
+    ]
+  }
+}

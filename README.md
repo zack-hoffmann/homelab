@@ -5,17 +5,17 @@
 **Home Network** IP: 52.144.113.103
 
 ## Hosts
-| Hostname | Internal IP   | Services                 | Hardware       |
-|----------|---------------|--------------------------|----------------|
-| gideon   | 192.168.4.137 | DNS, Homebridge, Nginx   |                |
-| grist    | 192.168.4.139 | Storage (openmediavault) |                |
-| ajani    | 192.168.4.140 | Lucas's personal server  |                |
-| vivien   | 192.168.4.156 | Minecraft, Palworld      |                |
-| garruk   | 192.168.4.185 | Wumpus Development       |                |
-| venser   |               | DNS                      | Libre v2       |
+| Hostname | Internal IP   | Services                 | OS             | Hardware       |
+|----------|---------------|--------------------------|----------------|----------------|
+| gideon   | 192.168.4.137 | DNS, Homebridge, Nginx   | Ubuntu Server  |                |
+| grist    | 192.168.4.139 | Storage                  | OpenMediaVault |                |
+| ajani    | 192.168.4.140 | Lucas's personal server  | Ubuntu Server  |                |
+| vivien   | 192.168.4.156 | Minecraft, Palworld      | Ubuntu Server  |                |
+| garruk   | 192.168.4.185 | Wumpus Development       | Ubuntu Server  |                |
+| venser   | 192.168.4.54  | DNS                      | Debian         | Libre v2       |
 
 ## TODOs
-- [ ] Set up DNS on Libre
+- [ ] Set up DNS on venser
 - [x] Finish setting up grist
 - [ ] Mount grist storage on other machines
 - [ ] Back up vivien, garruk, and gideon to grist
