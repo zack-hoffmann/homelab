@@ -16,7 +16,7 @@
 
 ## TODOs
 - [x] Set up DNS on venser
-- [ ] Clean up DNS/hostnames on all machines
+- [x] Clean up DNS/hostnames on all machines
 - [x] Finish setting up grist
 - [ ] Mount grist storage on other machines
 - [ ] Back up vivien, garruk, and gideon to grist
