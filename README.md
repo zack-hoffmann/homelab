@@ -18,11 +18,17 @@
 - [x] Set up DNS on venser
 - [x] Clean up DNS/hostnames on all machines
 - [x] Finish setting up grist
+- [X] Set up local admin accounts on all servers
+- [X] Set up OpenLDAP on venser
+- [ ] Set up LDAP sssd on grist and sync vaulthome ownership
 - [ ] Mount grist storage on other machines
+- [ ] Set up all machines to use OpenLDAP for auth
 - [ ] Back up vivien, garruk, and gideon to grist
 - [ ] Redo garruk as TalosOS kube machine
 - [ ] Move Homebridge to garruk (k8s)
 - [ ] Move LetsEncrypt to garruk (k8s)
+- [ ] Set up SSL share on grist
+- [ ] Update OpenLDAP to use SSL share
 - [ ] Redo gideon as k8s control plane and worker
 - [ ] Add garruk to k8s cluster as worker only
 - [ ] Redo vivien as k8s worker
