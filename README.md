@@ -20,7 +20,7 @@
 - [x] Finish setting up grist
 - [X] Set up local admin accounts on all servers
 - [X] Set up OpenLDAP on venser
-- [ ] Set up LDAP sssd on grist and sync vaulthome ownership
+- [X] Set up LDAP sssd on grist and sync vaulthome ownership
 - [ ] Mount grist storage on other machines
 - [ ] Set up all machines to use OpenLDAP for auth
 - [ ] Back up vivien, garruk, and gideon to grist
