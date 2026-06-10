@@ -14,6 +14,15 @@
 | garruk   | 192.168.4.185 | Wumpus Development  | Ubuntu Server  |                |
 | venser   | 192.168.4.54  | DNS                 | Debian         | Libre v2       |
 
+## Instructions
+### Joining to Domain
+1. Make sure the following are installed: sssd sssd-tools libnss-sss libpam-sss
+2. Create /etc/sssd/sssd.conf (see repo copy)
+3. chmod 600 /etc/sssd/sssd.conf
+4. systemctl enable sssd
+5. systemctl start sssd
+6. Grant sudo to any necessary users: sudo usermod -a -G sudo zack
+
 ## TODOs
 - [x] Set up DNS on venser
 - [x] Clean up DNS/hostnames on all machines
@@ -21,14 +30,18 @@
 - [X] Set up local admin accounts on all servers
 - [X] Set up OpenLDAP on venser
 - [X] Set up LDAP sssd on grist and sync vaulthome ownership
-- [ ] Mount grist storage on other machines
-- [ ] Set up all machines to use OpenLDAP for auth
-- [ ] Back up vivien, garruk, and gideon to grist
+- [X] Mount grist storage on other machines
+- [X] Set up all machines (excl. ajani) to use OpenLDAP for auth
+- [X] Back up garruk to grist
 - [ ] Redo garruk as TalosOS kube machine
-- [ ] Move Homebridge to garruk (k8s)
 - [ ] Move LetsEncrypt to garruk (k8s)
 - [ ] Set up SSL share on grist
+- [ ] Move Homebridge to garruk (k8s)
+- [ ] Move Jellyfin videos to grist
+- [ ] Move Jellyfin to garruk (k8s)
 - [ ] Update OpenLDAP to use SSL share
+- [ ] Back up gideon to grist
 - [ ] Redo gideon as k8s control plane and worker
 - [ ] Add garruk to k8s cluster as worker only
+- [ ] Back up vivien to grist
 - [ ] Redo vivien as k8s worker
