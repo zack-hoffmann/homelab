@@ -33,7 +33,9 @@
 - [X] Mount grist storage on other machines
 - [X] Set up all machines (excl. ajani) to use OpenLDAP for auth
 - [X] Back up garruk to grist
-- [ ] Redo garruk as TalosOS kube machine
+- [X] Redo garruk as kube machine
+- [ ] Set up dummy webapp on garruk
+- [ ] Port forward 80 and 443 to garruk, confirm dummy webapp ingress
 - [ ] Move LetsEncrypt to garruk (k8s)
 - [ ] Set up SSL share on grist
 - [ ] Move Homebridge to garruk (k8s)
