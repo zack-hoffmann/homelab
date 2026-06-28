@@ -1,0 +1,14 @@
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  hosts:
+  - host: dashboard.k8s.the-hoffmanns.org
+    paths:
+    - path: /
+      type: Prefix
+  tls:
+  - secretName: headlamp-tls
+    hosts:
+    - dashboard.k8s.the-hoffmanns.org

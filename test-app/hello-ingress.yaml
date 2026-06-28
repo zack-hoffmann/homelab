@@ -4,6 +4,8 @@ metadata:
   name: hello-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    cert-manager.io/cluster-issuer: "letsencrypt-http"
 spec:
   ingressClassName: nginx
   tls:

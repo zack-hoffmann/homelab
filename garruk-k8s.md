@@ -26,3 +26,9 @@ kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 kubectl get nodes
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.11.1/deploy/static/provider/cloud/deploy.yaml
 kubectl edit svc ingress-nginx-controller -n ingress-nginx #type: LoadBalancer → type: NodePort
+
+
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
+helm install cert-manager jetstack/cert-manager   --namespace cert-manager   --create-namespace   --set crds.enabled=true
