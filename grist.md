@@ -14,3 +14,4 @@
 |----------------------------------------------------------------------|----------------|
 | /srv/dev-disk-by-uuid-dcc19c50-1e1b-4b43-a648-34caa44c97d4/vaulthome | User home dirs |
 | /srv/dev-disk-by-uuid-aa1da122-70d3-42db-baea-194040739e66/certs/    | SSL certs      |
+| /srv/dev-disk-by-uuid-aa1da122-70d3-42db-baea-194040739e66/apps/     | App data       |

@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homebridge-default-config
+  namespace: homebridge
+data:
+  config.json: |
+    {
+      "bridge": {
+        "name": "Homebridge 44B2",
+        "username": "0E:C5:DB:3F:44:B2",
+        "port": 51263,
+        "pin": "159-46-421",
+        "advertiser": "bonjour-hap"
+      },
+      "accessories": [],
+      "platforms": [
+        {
+          "name": "Config",
+          "port": 8581,
+          "platform": "config",
+          "host": "0.0.0.0",
+          "proxyHost": "homebridge.home.the-hoffmanns.org"
+        }
+      ]
+    }

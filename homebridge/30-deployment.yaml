@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homebridge
+  namespace: homebridge
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: homebridge
+  template:
+    metadata:
+      labels:
+        app: homebridge
+    spec:
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
+      initContainers:
+      - name: configure-homebridge
+        image: homebridge/homebridge:latest
+        imagePullPolicy: IfNotPresent
+        command:
+        - sh
+        - -c
+        - |
+          set -eu
+          if [ ! -f /homebridge/config.json ]; then
+            cp /defaults/config.json /homebridge/config.json
+          fi
+          tmp="$(mktemp)"
+          jq '.platforms |= map(if .platform == "config" then . + {"host":"0.0.0.0"} else . end)' /homebridge/config.json > "$tmp"
+          cat "$tmp" > /homebridge/config.json
+          rm -f "$tmp"
+        volumeMounts:
+        - name: homebridge-data
+          mountPath: /homebridge
+        - name: homebridge-default-config
+          mountPath: /defaults
+          readOnly: true
+      containers:
+      - name: homebridge
+        image: homebridge/homebridge:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: TZ
+          value: Etc/UTC
+        ports:
+        - name: ui
+          containerPort: 8581
+        - name: homekit
+          containerPort: 51826
+        volumeMounts:
+        - name: homebridge-data
+          mountPath: /homebridge
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8581
+          initialDelaySeconds: 20
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8581
+          initialDelaySeconds: 60
+          periodSeconds: 30
+      volumes:
+      - name: homebridge-data
+        persistentVolumeClaim:
+          claimName: homebridge-data
+      - name: homebridge-default-config
+        configMap:
+          name: homebridge-default-config
