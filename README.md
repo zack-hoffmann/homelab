@@ -38,10 +38,10 @@
 - [X] Port forward 80 and 443 to garruk, confirm dummy webapp ingress
 - [X] Move LetsEncrypt to garruk (k8s)
 - [X] Set up SSL share on grist
-- [?] Move Homebridge to garruk (k8s)
-TODO: Need to move over bridges/devices
-- [ ] Move Jellyfin videos to grist
-- [ ] Move Jellyfin to garruk (k8s)
+- [X] Move Homebridge to garruk (k8s)
+- [X] Move Jellyfin videos to grist
+- [X] Move Jellyfin to garruk (k8s)
+- [ ] Set up SSL certificate share
 - [ ] Update OpenLDAP to use SSL share
 - [ ] Back up gideon to grist
 - [ ] Redo gideon as k8s control plane and worker
