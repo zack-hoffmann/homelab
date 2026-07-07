@@ -41,7 +41,7 @@
 - [X] Move Homebridge to garruk (k8s)
 - [X] Move Jellyfin videos to grist
 - [X] Move Jellyfin to garruk (k8s)
-- [ ] Set up SSL certificate share
+- [X] Set up SSL certificate share
 - [ ] Update OpenLDAP to use SSL share
 - [ ] Back up gideon to grist
 - [ ] Redo gideon as k8s control plane and worker
