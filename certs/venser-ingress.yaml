@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: venser-ingress
+  namespace: cert-sync
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - venser.the-hoffmanns.org
+    secretName: venser-tls
+  rules:
+  - host: venser.the-hoffmanns.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: http-dummy
+            port:
+              number: 80

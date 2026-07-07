@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ldap-ingress
+  namespace: cert-sync
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - ldap.the-hoffmanns.org
+    secretName: ldap-tls
+  rules:
+  - host: ldap.the-hoffmanns.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: http-dummy
+            port:
+              number: 80

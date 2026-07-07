@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: venser-cert-sync
+  namespace: cert-sync
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: venser-cert-sync
+  template:
+    metadata:
+      labels:
+        app: venser-cert-sync
+    spec:
+      containers:
+      - name: sync
+        image: alpine:3.19
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            apk add --no-cache inotify-tools;
+            while true; do
+              inotifywait -e modify,create,delete /cert-manager-vol/tls.crt /cert-manager-vol/tls.key;
+              cp /cert-manager-vol/tls.crt /certs-nfs/venser.the-hoffmanns.org/tls.crt;
+              cp /cert-manager-vol/tls.key /certs-nfs/venser.the-hoffmanns.org/tls.key;
+              echo "Synced venser certs at $(date)";
+            done
+        volumeMounts:
+        - name: cert-manager-vol
+          mountPath: /cert-manager-vol
+        - name: certs-nfs
+          mountPath: /certs-nfs
+      volumes:
+      - name: cert-manager-vol
+        secret:
+          secretName: venser-tls
+      - name: certs-nfs
+        persistentVolumeClaim:
+          claimName: certs
