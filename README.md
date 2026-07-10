@@ -43,8 +43,11 @@
 - [X] Move Jellyfin to garruk (k8s)
 - [X] Set up SSL certificate share
 - [X] Update OpenLDAP to use SSL share
-- [ ] Back up gideon to grist
-- [ ] Redo gideon as k8s control plane and worker
-- [ ] Add garruk to k8s cluster as worker only
-- [ ] Back up vivien to grist
-- [ ] Redo vivien as k8s worker
+- [X] Back up gideon to grist
+- [X] Redo gideon as k8s control plane and worker
+- [X] Add garruk to k8s cluster as worker only
+- [X] Back up vivien to grist
+- [X] Redo vivien as k8s worker
+- [ ] Password vault
+- [ ] Minecraft
+- [ ] RAM boost
