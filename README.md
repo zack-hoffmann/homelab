@@ -42,7 +42,7 @@
 - [X] Move Jellyfin videos to grist
 - [X] Move Jellyfin to garruk (k8s)
 - [X] Set up SSL certificate share
-- [ ] Update OpenLDAP to use SSL share
+- [X] Update OpenLDAP to use SSL share
 - [ ] Back up gideon to grist
 - [ ] Redo gideon as k8s control plane and worker
 - [ ] Add garruk to k8s cluster as worker only
