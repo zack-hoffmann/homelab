@@ -32,3 +32,7 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 helm repo add jetstack https://charts.jetstack.io
 helm repo update
 helm install cert-manager jetstack/cert-manager   --namespace cert-manager   --create-namespace   --set crds.enabled=true
+
+
+JOIN
+curl -sfL https://k3s.io | K3S_URL=https://api.k8s.the-hoffmanns.org:6443 K3S_TOKEN=K10324e2f88119f5a866068760edec8e3fe5496700e4ba68cf9b93fab0cb015bf78::server:5fbf455a526229fa6a3b401434782f12 sh -
