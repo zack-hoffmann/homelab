@@ -5,8 +5,12 @@ metadata:
   namespace: kube-system
 data:
   the-hoffmanns.server: |
+    ldap.the-hoffmanns.org:53 {
+        forward . 8.8.8.8
+    }
     the-hoffmanns.org:53 {
         errors
         cache 30
         forward . 192.168.4.54
     }
+
