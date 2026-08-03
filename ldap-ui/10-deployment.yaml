@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ldap-ui
+  namespace: ldap-ui
+  labels:
+    app: ldap-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ldap-ui
+  template:
+    metadata:
+      labels:
+        app: ldap-ui
+    spec:
+      containers:
+      - name: ldap-ui
+        image: dnknth/ldap-ui:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: LDAP_URL
+          value: "ldaps://ldap.the-hoffmanns.org:636"
+        - name: BASE_DN
+          value: "dc=the-hoffmanns,dc=org"

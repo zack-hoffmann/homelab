@@ -7,11 +7,11 @@
 ## Hosts
 | Hostname | Internal IP   | Services            | OS             | Hardware       |
 |----------|---------------|---------------------|----------------|----------------|
-| gideon   | 192.168.4.137 | Homebridge, Nginx   | Ubuntu Server  |                |
+| gideon   | 192.168.4.137 | k3s control plane   | Ubuntu Server  |                |
 | grist    | 192.168.4.139 | Storage             | OpenMediaVault |                |
 | ajani    | 192.168.4.140 | Lucas's server      | Ubuntu Server  |                |
-| vivien   | 192.168.4.156 | Minecraft, Palworld | Ubuntu Server  |                |
-| garruk   | 192.168.4.185 | Wumpus Development  | Ubuntu Server  |                |
+| vivien   | 192.168.4.156 | k3s worker          | Ubuntu Server  |                |
+| garruk   | 192.168.4.185 | k3s worker          | Ubuntu Server  |                |
 | venser   | 192.168.4.54  | DNS                 | Debian         | Libre v2       |
 
 ## Instructions

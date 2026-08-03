@@ -32,3 +32,9 @@ sudo apt update
 sudo apt install openssh-server
 sudo systemctl enable --now ssh
 ```
+
+###
+ldap_uri = ldaps://ldap.the-hoffmanns.org:636
+ldap_search_base = dc=the-hoffmanns,dc=org
+ldap_user_search_base = ou=People,dc=the-hoffmanns,dc=org
+ldap_group_search_base = ou=Groups,dc=the-hoffmanns,dc=org

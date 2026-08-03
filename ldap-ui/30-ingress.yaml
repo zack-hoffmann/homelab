@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ldap-ui-ingress
+  namespace: ldap-ui
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: traefik
+  tls:
+  - hosts:
+    - ldap.home.the-hoffmanns.org
+    secretName: ldap-subdomain-tls
+  rules:
+  - host: ldap.home.the-hoffmanns.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ldap-ui-service
+            port:
+              number: 8080 #Update to 5000
