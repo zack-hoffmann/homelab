@@ -21,4 +21,4 @@ spec:
           service:
             name: ldap-ui-service
             port:
-              number: 8080 #Update to 5000
+              number: 5000

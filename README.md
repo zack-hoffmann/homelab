@@ -48,6 +48,7 @@
 - [X] Add garruk to k8s cluster as worker only
 - [X] Back up vivien to grist
 - [X] Redo vivien as k8s worker
+- [X] lucas
 - [ ] Password vault
 - [ ] Minecraft
-- [ ] RAM boost
+- [X] RAM boost
