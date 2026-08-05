@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: restart-palworld
+  namespace: palworld
+spec:
+  schedule: "0 2 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: palworld-robot
+          restartPolicy: OnFailure
+          containers:
+          - name: kubectl
+            image: bitnami/kubectl:latest
+            command:
+            - "kubectl"
+            - "rollout"
+            - "restart"
+            - "statefulset/palworld-server"
+            - "-n"
+            - "palworld"

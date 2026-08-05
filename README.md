@@ -49,6 +49,8 @@
 - [X] Back up vivien to grist
 - [X] Redo vivien as k8s worker
 - [X] lucas
+- [X] Automatic backup
+- [X] Automatic palworld restart
 - [ ] Password vault
 - [ ] Minecraft
 - [X] RAM boost
