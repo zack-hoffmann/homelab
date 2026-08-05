@@ -1,0 +1,34 @@
+# values.yaml
+domain: "https://vaultwarden.the-hoffmanns.org"
+
+vaultwarden:
+  signupsAllowed: false
+
+ingress:
+  enabled: true
+  class: "traefik"
+  hostname: "vaultwarden.the-hoffmanns.org"
+  tlsSecret: "vaultwarden-tls"
+  additionalAnnotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"  # Or your specific cluster issuer name
+
+smtp:
+  host: "smtp.gmail.com"
+  port: 587
+  from: "accounts@the-hoffmanns.org"
+  fromName: "Hoffmann Family Vault"
+  existingSecret: "vaultwarden-secrets"
+  username:
+    existingSecretKey: "SMTP_USERNAME"
+  password:
+    existingSecretKey: "SMTP_PASSWORD"
+
+adminToken:
+  existingSecret: "vaultwarden-secrets"
+  existingSecretKey: "adminToken"
+
+storage:
+  data:
+    name: "vaultwarden-data"
+    size: "5Gi"
+    accessMode: "ReadWriteOnce"
