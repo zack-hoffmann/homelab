@@ -51,6 +51,6 @@
 - [X] lucas
 - [X] Automatic backup
 - [X] Automatic palworld restart
-- [ ] Password vault
+- [X] Password vault
 - [ ] Minecraft
 - [X] RAM boost
